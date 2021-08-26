@@ -22,7 +22,7 @@ class PostInfoItem extends StatelessWidget {
         children: [
           Icon(
             icon,
-            color: Colors.grey,
+            color: Color(0xffc4c4c4),
             size: 18,
           ),
           SizedBox(
