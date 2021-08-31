@@ -1,8 +1,7 @@
-import 'package:avenue_demo/models/models.dart';
+import 'package:avenue_demo/features/post_times/data/data.dart';
+import 'package:avenue_demo/features/post_times/presentation/presentation.dart';
 import 'package:avenue_demo/services/mock_post.dart';
 import 'package:flutter/material.dart';
-
-import 'package:avenue_demo/pages/post_times_page/widgets/widgets.dart';
 
 class PostTimesPage extends StatefulWidget {
   const PostTimesPage({Key? key}) : super(key: key);
@@ -13,7 +12,7 @@ class PostTimesPage extends StatefulWidget {
 
 class _PostTimesPageState extends State<PostTimesPage> {
   late MockPost mockPost;
-  late List<Post> posts;
+  late List<PostTimeDto> posts;
 
   @override
   void initState() {
@@ -43,7 +42,7 @@ class _PostTimesPageState extends State<PostTimesPage> {
                   itemCount: posts.length,
                   itemBuilder: (context, index) {
                     return PostTimeCard(
-                      post: posts[index],
+                      postTime: posts[index],
                     );
                   },
                 ),

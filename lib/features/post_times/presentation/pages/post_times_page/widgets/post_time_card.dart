@@ -1,15 +1,15 @@
+import 'package:avenue_demo/features/post_times/data/data.dart';
+import 'package:avenue_demo/features/post_times/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 
-import 'package:avenue_demo/models/models.dart';
-import 'package:avenue_demo/pages/post_times_page/widgets/widgets.dart';
 import 'package:avenue_demo/resources/resources.dart';
 
 class PostTimeCard extends StatelessWidget {
   const PostTimeCard({
     Key? key,
-    required this.post,
+    required this.postTime,
   }) : super(key: key);
-  final Post post;
+  final PostTimeDto postTime;
 
   @override
   Widget build(BuildContext context) {
@@ -35,17 +35,17 @@ class PostTimeCard extends StatelessWidget {
                 PostInfoItem(
                   icon: Icons.favorite_outline,
                   label: "Likes",
-                  value: "${post.likesCount}",
+                  value: "${postTime.likesCount}",
                 ),
                 PostInfoItem(
                   icon: Icons.chat_bubble_outline,
                   label: "Comments",
-                  value: "${post.commentsCount}",
+                  value: "${postTime.commentsCount}",
                 ),
                 PostInfoItem(
                   icon: Icons.flash_on_outlined,
                   label: "Average Engagement",
-                  value: "${post.averageEngagement.toStringAsFixed(2)}",
+                  value: "${postTime.averageEngagement.toStringAsFixed(2)}",
                 ),
               ],
             ),

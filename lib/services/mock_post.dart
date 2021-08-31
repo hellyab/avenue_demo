@@ -1,17 +1,18 @@
 import 'dart:math';
 
-import 'package:avenue_demo/models/models.dart';
+import 'package:avenue_demo/features/post_times/data/models/models.dart';
 
 class MockPost {
-  List<Post> getMockPosts() {
+  List<PostTimeDto> getMockPosts() {
     Random rand = Random();
-    return List<Post>.filled(
+    return List<PostTimeDto>.filled(
       10,
-      Post(
-        dateTime: DateTime.now(),
-        likesCount: rand.nextInt(999),
-        commentsCount: rand.nextInt(999),
+      PostTimeDto(
         averageEngagement: rand.nextDouble() * 100,
+        commentsCount: rand.nextInt(999),
+        dateTime: DateTime.now(),
+        imageUrl: "some image url",
+        likesCount: rand.nextInt(999),
       ),
     );
   }

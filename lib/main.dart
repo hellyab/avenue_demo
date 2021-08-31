@@ -1,4 +1,4 @@
-import 'package:avenue_demo/pages/post_times_page/post_times_page.dart';
+import 'package:avenue_demo/features/post_times/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
