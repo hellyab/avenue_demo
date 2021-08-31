@@ -55,27 +55,9 @@ class _PostTimesPageState extends State<PostTimesPage> {
                             },
                           );
                         } else if (postTimeState is Failed) {
-                          return Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Transform.rotate(
-                                angle: 90,
-                                child: Text(
-                                  ":(",
-                                  style: Theme.of(context).textTheme.headline5,
-                                ),
-                              ),
-                              Text("Can't get post times")
-                            ],
-                          );
+                          return ErrorIndicator();
                         } else {
-                          return Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CircularProgressIndicator(),
-                              Text("Getting post times")
-                            ],
-                          );
+                          return LoadingIndicator();
                         }
                       }),
                 ),

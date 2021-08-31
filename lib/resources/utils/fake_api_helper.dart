@@ -3,8 +3,7 @@ import 'package:avenue_demo/resources/resources.dart';
 class FakeApiHelper implements HttpHelper {
   @override
   Future<HttpResponse> get({required String url}) {
-    
-    return Future.delayed(Duration(seconds: 1), () {
+    return Future.delayed(Duration(seconds: 5), () {
       return HttpResponse(
         data: [
           {
