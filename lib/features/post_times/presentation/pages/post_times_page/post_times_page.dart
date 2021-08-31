@@ -55,29 +55,26 @@ class _PostTimesPageState extends State<PostTimesPage> {
                             },
                           );
                         } else if (postTimeState is Failed) {
-                          return Center(
-                            child: Column(
-                              children: [
-                                Transform.rotate(
-                                  angle: 90,
-                                  child: Text(
-                                    ":(",
-                                    style:
-                                        Theme.of(context).textTheme.headline5,
-                                  ),
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Transform.rotate(
+                                angle: 90,
+                                child: Text(
+                                  ":(",
+                                  style: Theme.of(context).textTheme.headline5,
                                 ),
-                                Text("Can't get post times")
-                              ],
-                            ),
+                              ),
+                              Text("Can't get post times")
+                            ],
                           );
                         } else {
-                          return Center(
-                            child: Column(
-                              children: [
-                                CircularProgressIndicator(),
-                                Text("Getting post times")
-                              ],
-                            ),
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              CircularProgressIndicator(),
+                              Text("Getting post times")
+                            ],
                           );
                         }
                       }),

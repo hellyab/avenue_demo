@@ -17,7 +17,7 @@ class PostTimeDto extends PostTime {
   }) : super(
             averageEngagement: engagement,
             commentsCount: comments,
-            dateTime: postedTime,
+            postedAt: postedTime,
             likesCount: likes,
             imageUrl: photoUrl);
 

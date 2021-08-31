@@ -1,10 +1,14 @@
-import 'package:avenue_demo/resources/resources.dart';
 import 'package:flutter/material.dart';
+
+import 'package:avenue_demo/resources/resources.dart';
+import 'package:intl/intl.dart';
 
 class PostTimeTag extends StatelessWidget {
   const PostTimeTag({
     Key? key,
+    required this.postedTime,
   }) : super(key: key);
+  final DateTime postedTime;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class PostTimeTag extends StatelessWidget {
             width: 7.5,
           ),
           Text(
-            "Posted Sunday at 12:30PM",
+            "Posted ${DateFormat('EEEEE', 'en_US').format(postedTime)} at ${DateFormat.jm().format(postedTime)}",
             style: Theme.of(context).textTheme.bodyText1?.copyWith(
                   color: theBlue,
                 ),
