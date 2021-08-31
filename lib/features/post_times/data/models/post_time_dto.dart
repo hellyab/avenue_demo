@@ -3,58 +3,57 @@ import 'dart:convert';
 import 'package:avenue_demo/features/post_times/domain/entities/post_time.dart';
 
 class PostTimeDto extends PostTime {
-  final double averageEngagement;
-  final int commentsCount;
-  final DateTime dateTime;
-  final String imageUrl;
-  final int likesCount;
+  final double engagement;
+  final int comments;
+  final DateTime postedTime;
+  final String photoUrl;
+  final int likes;
   PostTimeDto({
-    required this.averageEngagement,
-    required this.commentsCount,
-    required this.dateTime,
-    required this.imageUrl,
-    required this.likesCount,
+    required this.engagement,
+    required this.comments,
+    required this.postedTime,
+    required this.photoUrl,
+    required this.likes,
   }) : super(
-          averageEngagement: averageEngagement,
-          commentsCount: commentsCount,
-          dateTime: dateTime,
-          likesCount: likesCount,
-          imageUrl: imageUrl,
-        );
+            averageEngagement: engagement,
+            commentsCount: comments,
+            dateTime: postedTime,
+            likesCount: likes,
+            imageUrl: photoUrl);
 
   PostTimeDto copyWith({
-    double? averageEngagement,
-    int? commentsCount,
-    DateTime? dateTime,
-    String? imageUrl,
-    int? likesCount,
+    double? engagement,
+    int? comments,
+    DateTime? postedTime,
+    String? photoUrl,
+    int? likes,
   }) {
     return PostTimeDto(
-      averageEngagement: averageEngagement ?? this.averageEngagement,
-      commentsCount: commentsCount ?? this.commentsCount,
-      dateTime: dateTime ?? this.dateTime,
-      imageUrl: imageUrl ?? this.imageUrl,
-      likesCount: likesCount ?? this.likesCount,
+      engagement: engagement ?? this.engagement,
+      comments: comments ?? this.comments,
+      postedTime: postedTime ?? this.postedTime,
+      photoUrl: photoUrl ?? this.photoUrl,
+      likes: likes ?? this.likes,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'averageEngagement': averageEngagement,
-      'commentsCount': commentsCount,
-      'dateTime': dateTime.millisecondsSinceEpoch,
-      'imageUrl': imageUrl,
-      'likesCount': likesCount,
+      'engagement': engagement,
+      'comments': comments,
+      'postedTime': postedTime.toString(),
+      'photoUrl': photoUrl,
+      'likes': likes,
     };
   }
 
   factory PostTimeDto.fromMap(Map<String, dynamic> map) {
     return PostTimeDto(
-      averageEngagement: map['averageEngagement'],
-      commentsCount: map['commentsCount'],
-      dateTime: DateTime.fromMillisecondsSinceEpoch(map['dateTime']),
-      imageUrl: map['imageUrl'],
-      likesCount: map['likesCount'],
+      engagement: map['engagement'],
+      comments: map['comments'],
+      postedTime: DateTime.parse(map['postedTime']),
+      photoUrl: map['photoUrl'],
+      likes: map['likes'],
     );
   }
 
@@ -65,7 +64,7 @@ class PostTimeDto extends PostTime {
 
   @override
   String toString() {
-    return 'PostTimeDto(averageEngagement: $averageEngagement, commentsCount: $commentsCount, dateTime: $dateTime, imageUrl: $imageUrl, likesCount: $likesCount)';
+    return 'PostTimeDto(engagement: $engagement, comments: $comments, postedTime: $postedTime, photoUrl: $photoUrl, likes: $likes)';
   }
 
   @override
@@ -73,19 +72,19 @@ class PostTimeDto extends PostTime {
     if (identical(this, other)) return true;
 
     return other is PostTimeDto &&
-        other.averageEngagement == averageEngagement &&
-        other.commentsCount == commentsCount &&
-        other.dateTime == dateTime &&
-        other.imageUrl == imageUrl &&
-        other.likesCount == likesCount;
+        other.engagement == engagement &&
+        other.comments == comments &&
+        other.postedTime == postedTime &&
+        other.photoUrl == photoUrl &&
+        other.likes == likes;
   }
 
   @override
   int get hashCode {
-    return averageEngagement.hashCode ^
-        commentsCount.hashCode ^
-        dateTime.hashCode ^
-        imageUrl.hashCode ^
-        likesCount.hashCode;
+    return engagement.hashCode ^
+        comments.hashCode ^
+        postedTime.hashCode ^
+        photoUrl.hashCode ^
+        likes.hashCode;
   }
 }

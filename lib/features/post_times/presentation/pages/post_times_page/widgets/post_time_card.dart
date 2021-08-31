@@ -1,4 +1,4 @@
-import 'package:avenue_demo/features/post_times/data/data.dart';
+import 'package:avenue_demo/features/post_times/domain/domain.dart';
 import 'package:avenue_demo/features/post_times/presentation/presentation.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +9,7 @@ class PostTimeCard extends StatelessWidget {
     Key? key,
     required this.postTime,
   }) : super(key: key);
-  final PostTimeDto postTime;
+  final PostTime postTime;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,7 @@ class PostTimeCard extends StatelessWidget {
                 PostInfoItem(
                   icon: Icons.flash_on_outlined,
                   label: "Average Engagement",
-                  value: "${postTime.averageEngagement.toStringAsFixed(2)}",
+                  value: "${postTime.averageEngagementPercent}",
                 ),
               ],
             ),

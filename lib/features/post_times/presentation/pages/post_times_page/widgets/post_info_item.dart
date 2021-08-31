@@ -29,7 +29,7 @@ class PostInfoItem extends StatelessWidget {
             width: 7.5,
           ),
           Text(
-            "$value${isPercent ? "%" : ""} $label",
+            "$value $label",
             style: Theme.of(context).textTheme.bodyText1,
           ),
         ],
